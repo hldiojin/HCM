@@ -7,10 +7,10 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(`AIzaSyD7QkI0e_P1igH4Cjdp3ZKoACFr5EcRDgU`);
 
 const predefinedPrompts = [
-  "Tóm tắt diễn biến chính của chiến dịch Điện Biên Phủ",
-  "Vai trò của Đại tướng Võ Nguyên Giáp trong chiến dịch",
-  "Ý nghĩa của chiến thắng Điện Biên Phủ",
-  "Những khó khăn trong chiến dịch Điện Biên Phủ",
+  "Những yếu tố văn hóa truyền thống ảnh hưởng đến tư tưởng Hồ Chí Minh",
+  "Các yếu tố thời đại tác động đến sự hình thành tư tưởng Hồ Chí Minh",
+  "Vai trò của chủ nghĩa Marx-Lenin trong tư tưởng Hồ Chí Minh",
+  "Quá trình hình thành tư tưởng yêu nước và cách mạng của Hồ Chí Minh",
 ];
 
 const Button = ({ children, type, disabled, className, onClick }) => (
@@ -108,7 +108,9 @@ const ChatApp = () => {
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg">
       <div className="bg-red-600 text-white p-4 rounded-t-lg flex justify-between items-center">
-        <h1 className="text-xl font-bold">Hỏi đáp về Điện Biên Phủ</h1>
+        <h1 className="text-xl font-bold">
+          Hỏi đáp về Tư tưởng Hồ Chí Minh
+        </h1>
         <Button onClick={handleReset} className="bg-red-700 hover:bg-red-800">
           <Trash2 size={20} />
         </Button>
@@ -118,7 +120,7 @@ const ChatApp = () => {
           <div className="text-center text-gray-500 py-8">
             <Bot size={40} className="mx-auto mb-2" />
             <p>
-              Chọn câu hỏi hoặc nhập câu hỏi của bạn về chiến dịch Điện Biên Phủ
+              Chọn câu hỏi hoặc nhập câu hỏi của bạn về Tư tưởng Hồ Chí Minh
             </p>
             <div className="grid grid-cols-1 gap-2 mt-4">
               {predefinedPrompts.map((prompt, index) => (
@@ -156,7 +158,6 @@ const ChatApp = () => {
             >
               <div className="prose prose-sm max-w-none">
                 {message.text.split("\n").map((line, i) => {
-                  // Xử lý các dòng có định dạng markdown
                   if (line.startsWith("**")) {
                     return (
                       <h3 key={i} className="font-bold text-lg mb-2">

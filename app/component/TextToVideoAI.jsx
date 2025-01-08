@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Loader2 } from "lucide-react";
 
 const prompts = {
-  "Toàn cảnh chiến trường Điện Biên Phủ":
-    "Aerial view of Dien Bien Phu battlefield 1954, valley surrounded by mountains, French fortifications, trenches, historical accurate, realistic style",
-  "Chiến thắng lịch sử":
-    "Vietnamese victory at Dien Bien Phu 1954, soldiers raising flag, captured French bunkers, emotional moment, historical photograph style",
-  "Đường hầm và chiến hào":
-    "Underground tunnels and trenches at Dien Bien Phu, Vietnamese soldiers, artillery transport, detailed engineering, dark atmosphere",
-  "Pháo binh trên đồi":
-    "Vietnamese artillery positions on hills overlooking Dien Bien Phu, camouflaged guns, soldiers in action, dramatic lighting",
-  "Đời sống chiến sĩ":
-    "Daily life of Vietnamese soldiers at Dien Bien Phu, carrying supplies, cooking, resting in bunkers, documentary style",
+  "Cơ sở lý luận":
+    "Foundations of Ho Chi Minh's ideology, Marxist-Leninist principles, cultural synthesis, historical realism, philosophical depth",
+  "Quá trình hình thành tư tưởng":
+    "Development of Ho Chi Minh's ideology, revolutionary journey, exposure to global movements, key influences, historical narrative",
+  "Chủ nghĩa yêu nước Việt Nam":
+    "Vietnamese patriotism in Ho Chi Minh's ideology, national liberation, unity, cultural heritage, emotional depiction",
+  "Tư tưởng nhân văn":
+    "Humanitarian aspects of Ho Chi Minh's ideology, social justice, compassion, equality, uplifting imagery",
+  "Hòa bình và độc lập dân tộc":
+    "Peace and national independence in Ho Chi Minh's thought, international solidarity, historical moments, inspirational depiction",
 };
 
 const TextToImageGenerator = () => {
@@ -72,7 +72,7 @@ const TextToImageGenerator = () => {
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6">
       <h1 className="text-2xl font-bold text-center mb-6">
-        Tạo Hình Ảnh Chiến Thắng Điện Biên Phủ
+        Tạo Hình Ảnh Chủ Đề: Tư Tưởng Hồ Chí Minh
       </h1>
 
       <div className="bg-white rounded-lg shadow-lg p-6 space-y-4">
