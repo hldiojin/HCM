@@ -1,0 +1,29 @@
+{
+  "name": "vnr202-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "SET BROWSER=chrome && next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "canvas-confetti": "^1.9.3",
+    "lucide-react": "^0.468.0",
+    "next": "15.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-pannellum": "^0.2.16",
+    "replicate": "^1.0.1",
+    "vercel": "^39.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
