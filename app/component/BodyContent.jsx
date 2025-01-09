@@ -21,20 +21,20 @@ const TimelineEvent = ({ period, title, content, icon, details }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <motion.div 
+    <motion.div
       className="flex gap-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all"
       whileHover={{ scale: 1.02 }}
     >
       <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
         {icon}
       </div>
-      
+
       <div className="flex-1">
         <div className="font-bold text-indigo-600">{period}</div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-gray-600 mb-2">{content}</p>
-        
-        <button 
+
+        <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="text-indigo-600 hover:underline flex items-center gap-1"
         >
@@ -67,7 +67,7 @@ const TimelineEvent = ({ period, title, content, icon, details }) => {
 };
 
 const ValueCard = ({ title, icon, points }) => (
-  <motion.div 
+  <motion.div
     className="bg-white p-6 rounded-xl shadow-lg"
     whileHover={{ scale: 1.03 }}
     transition={{ duration: 0.3 }}
@@ -78,7 +78,7 @@ const ValueCard = ({ title, icon, points }) => (
       </div>
       <h3 className="text-xl font-bold">{title}</h3>
     </div>
-    
+
     <ul className="space-y-3">
       {points.map((point, idx) => (
         <li key={idx} className="flex gap-2">
@@ -159,7 +159,7 @@ const BodyContent = () => {
       ]
     }
   ];
-  
+
 
   const values = [
     {
@@ -269,7 +269,6 @@ const BodyContent = () => {
 
   const toggleStep = (index) => {
     setActiveStep(activeStep === index ? null : index);
-    // Khi người dùng click vào mục "Chiến thắng" (index 5)
     if (index === 5 && activeStep !== index) {
       fireConfetti();
     }
@@ -303,7 +302,7 @@ const BodyContent = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Cơ sở hình thành */}
         <section className="mb-20">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold mb-10 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -311,10 +310,10 @@ const BodyContent = () => {
           >
             Cơ sở hình thành tư tưởng Hồ Chí Minh
           </motion.h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Cơ sở khách quan */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl p-6 shadow-lg"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -323,7 +322,7 @@ const BodyContent = () => {
                 <Globe className="h-8 w-8 text-indigo-600" />
                 <h3 className="text-xl font-bold">Cơ sở khách quan</h3>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="border-l-4 border-indigo-600 pl-4">
                   <h4 className="font-semibold mb-2">Truyền thống văn hóa dân tộc</h4>
@@ -344,7 +343,7 @@ const BodyContent = () => {
             </motion.div>
 
             {/* Cơ sở chủ quan */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl p-6 shadow-lg"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -353,7 +352,7 @@ const BodyContent = () => {
                 <UserCircle className="h-8 w-8 text-indigo-600" />
                 <h3 className="text-xl font-bold">Cơ sở chủ quan</h3>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="border-l-4 border-indigo-600 pl-4">
                   <h4 className="font-semibold mb-2">Tư duy và năng lực sáng tạo</h4>
@@ -377,7 +376,7 @@ const BodyContent = () => {
 
         {/* Quá trình phát triển */}
         <section className="mb-20">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold mb-10 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -385,7 +384,7 @@ const BodyContent = () => {
           >
             Quá trình hình thành và phát triển
           </motion.h2>
-          
+
 
           <div className="space-y-8">
             {timeline.map((stage, index) => (
@@ -396,7 +395,7 @@ const BodyContent = () => {
 
         {/* Giá trị tư tưởng */}
         <section>
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold mb-10 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +404,7 @@ const BodyContent = () => {
             Giá trị tư tưởng Hồ Chí Minh
           </motion.h2>
 
-          
+
           <div className="mb-18">
             <h2 className="text-3xl font-bold mb-6">Nguồn gốc tư tưởng</h2>
             <div className="bg-white rounded-lg shadow-lg p-6">
@@ -431,7 +430,7 @@ const BodyContent = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mt-12">
             {values.map((value, index) => (
               <ValueCard key={index} {...value} />
@@ -439,42 +438,44 @@ const BodyContent = () => {
           </div>
         </section>
 
-        
+
         {/* Phần kết luận cập nhật */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           <div className="bg-red-50 rounded-lg p-6">
             <h2 className="text-2xl font-bold mb-4">
-              Thắng lợi và ý nghĩa lịch sử
+              Đối với sự phát triển, tiến bộ của nhân loại
             </h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <ArrowRight className="mt-1 text-red-600" />
                 <span>
-                  Chiến thắng Điện Biên Phủ và thắng lợi của chiến dịch Đông
-                  Xuân 1953-1954 đã buộc Pháp phải ký Hiệp định Genève, chấm dứt
-                  chiến tranh ở Đông Dương.
+                  Góp phần vào phong trào giải phóng dân tộc:<br />
+                  Tư tưởng Hồ Chí Minh là ngọn cờ dẫn đường cho nhiều phong trào cách mạng trên thế giới.
+
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <ArrowRight className="mt-1 text-red-600" />
                 <span>
-                  Hiệp định Genève (1954) công nhận độc lập, chủ quyền, thống
-                  nhất và toàn vẹn lãnh thổ của ba nước Đông Dương.
+                  Đóng góp cho lý luận cách mạng vô sản:<br />
+                  Làm phong phú thêm chủ nghĩa Marx-Lenin qua việc vận dụng vào điều kiện thuộc địa.
+
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <ArrowRight className="mt-1 text-red-600" />
                 <span>
-                  Miền Bắc được hoàn toàn giải phóng, tạo cơ sở vững chắc cho
-                  cuộc đấu tranh thống nhất nước nhà.
+                  Đề cao giá trị nhân văn và hòa bình:<br />
+                  Tư tưởng về hòa bình, hợp tác và sự bình đẳng giữa các dân tộc.
+
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <ArrowRight className="mt-1 text-red-600" />
                 <span>
-                  Thắng lợi là kết quả của đường lối đúng đắn của Đảng, sự lãnh
-                  đạo tài tình của Chủ tịch Hồ Chí Minh và sức mạnh đại đoàn kết
-                  toàn dân tộc.
+                  Định hướng phát triển toàn cầu:<br />
+                  Đặt nền tảng cho sự đoàn kết quốc tế và xây dựng một thế giới công bằng, tiến bộ.
+
                 </span>
               </li>
             </ul>
